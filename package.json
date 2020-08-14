@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-personal-starter-blog",
+  "name": "personal-site-v2",
   "private": true,
   "description": "Personal site v2",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Jorge Ruvalcaba <jorgeruvalcabav@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "2.23.12",
+    "gatsby": "2.24.7",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-feed-mdx": "^1.0.0",
     "gatsby-plugin-google-analytics": "^2.0.18",
