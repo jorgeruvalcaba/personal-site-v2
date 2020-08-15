@@ -1,10 +1,9 @@
 module.exports = {
   siteMetadata: {
-    // edit below
-    title: `Jorge Ruvalcaba's Personal Site`,
+    title: `Tabs & Spaces`,
     author: `Jorge Ruvalcaba`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://jorge-personal-site-v2.netlify.app//`,
+    description: `Blog de Jorge Ruvalcaba. Se habla de código como de cosas interesantes que encuentra en la red el autor.`,
+    siteUrl: `https://jorge-personal-site-v2.netlify.app/`,
     social: {
       twitter: `jorgearuv`,
     },
@@ -17,6 +16,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -71,14 +71,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Jorge Ruvalcaba`,
+        short_name: `jorgearuv`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/jorge-icon.png`,
       },
     },
     {
