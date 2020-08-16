@@ -11,6 +11,11 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link
+          type="application/opensearchdescription+xml"
+          rel="search"
+          href="opensearch.xml"
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -21,11 +26,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <link
-          type="application/opensearchdescription+xml"
-          rel="search"
-          href="opensearch.xml"
-        />
       </body>
     </html>
   )
