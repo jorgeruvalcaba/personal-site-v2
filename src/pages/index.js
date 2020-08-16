@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFile } from "@fortawesome/free-solid-svg-icons"
+import { faFile, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import {
   faGithub,
   faLinkedin,
@@ -79,6 +79,51 @@ const ImageWrapper = styled.div`
       transform: scale(1.5);
     }
   }
+
+  .envelope {
+    transition: transform 1s;
+
+    :hover {
+      color: orange;
+      cursor: pointer;
+      transform: scale(1.5);
+    }
+  }
+`
+
+const Hand = styled.span`
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 `
 
 class IndexPage extends React.Component {
@@ -100,9 +145,9 @@ class IndexPage extends React.Component {
         </ImageWrapper>
         <h1>
           Hey people{" "}
-          <span role="img" aria-label="wave emoji">
+          <Hand role="img" aria-label="wave emoji">
             👋
-          </span>
+          </Hand>
           <br />
           I'm Jorge and I build things for the web{" "}
         </h1>
@@ -124,7 +169,6 @@ class IndexPage extends React.Component {
             icon={faGithub}
             size="3x"
           />
-
           <FontAwesomeIcon
             className="linkedin"
             onClick={() =>
@@ -147,6 +191,14 @@ class IndexPage extends React.Component {
               )
             }
             icon={faFile}
+            size="3x"
+          />
+          <FontAwesomeIcon
+            className="envelope"
+            onClick={() =>
+              (window.location = "mailto:jorgeruvalcabav@gmail.com")
+            }
+            icon={faEnvelope}
             size="3x"
           />
         </ImageWrapper>
