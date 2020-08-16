@@ -1,18 +1,12 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby Personal Starter Blog
+  Personal site v2
 </h1>
 
 <img alt="screenshot" src="./screenshot.png">
 
-This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
+This page was forked from the Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So this page combined these 2!
 
-Too see a search-enabled version of this starter, please visit the [with-search](https://github.com/thomaswang/gatsby-personal-starter-blog/tree/with-search) branch.
+Kudos to [Thomas Wang](https://github.com/thomaswang) for this great starter, if you want to create a page similar to this one, take a look at his [repo](https://github.com/thomaswang/gatsby-personal-starter-blog) or you can follow the steps below.
 
 ## 🚀 Quick start
 
@@ -57,5 +51,3 @@ Start from [this point](https://www.gatsbyjs.org/docs/sourcing-from-netlify-cms/
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thomaswangio/gatsby-personal-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
