@@ -1,0 +1,50 @@
+---
+path: "bienvenidos-al-blog"
+date: 2020-08-16
+title: "Add tab to search in your Gatsby blog"
+description: "Let's see how you can add this cool feature in an easy way"
+---
+
+<div style="display: flex; align-items: center; flex-direction: column; position: relative; width: 100%; margin-bottom: 2rem; margin-left: auto; margin-right: auto;">
+  <video style="width: 100%" controls>
+    <source src="../assets/tab-to-search.mp4" type="video/mp4" />
+  </video>
+  <p style="font-style: italic">
+    You can go to the blog main page to see the demo
+  </p>
+</div>
+
+There’s a cool Chromium browser feature called [Tab to Search](https://www.chromium.org/tab-to-search), which lets you quickly search a site via a Chromium address bar (aka the Omnibox).
+
+Here’s 3 quick steps to add it to your search-enabled Gatsby blog:
+
+1. Create a file named `opensearch.xml` in your `static` directory (`src/static/opensearch.xml`) and add the following:
+
+```xml
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>[Your Blog's Name]</ShortName>
+  <Description>[Your Blog's Description]</Description>
+  <Url type="text/html" method="get" template="https://[your-url]/blog/?search={searchTerms}"/>
+</OpenSearchDescription>
+```
+
+Make sure to add your preferred `<ShortName>` and `<Description>` text content. The `<Url>` template is the url where the search is taking place. In our case, it’s `/blog/?search={searchTerms}`, with `{searchTerms}` being the string the user types into the Omnibox. These tags are required for Chromium to add your site to the list of searchable sites and authomatically enable this feature.
+
+2. Copy the default `html.js` file to your Gatsby site so we can [modify the default HTML Gatsby file](https://www.gatsbyjs.org/docs/custom-html/).
+
+```sh
+cp .cache/default-html.js src/html.js
+```
+
+3. In your newly created `src/html.js` file, add the following `<link>` tag:
+
+```html
+<link
+  type="application/opensearchdescription+xml"
+  rel="search"
+  href="opensearch.xml"
+/>
+```
+
+And thats it! With this change in place you'll have this neat feature up and running in your blog 😎.
