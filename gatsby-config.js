@@ -3,7 +3,7 @@ module.exports = {
     title: `Tabs & Spaces`,
     author: `Jorge Ruvalcaba`,
     description: `Blog de Jorge Ruvalcaba. Se habla de código como de cosas interesantes que encuentra en la red el autor.`,
-    siteUrl: `https://jorge-personal-site-v2.netlify.app/`,
+    siteUrl: "https://jorgeruvalcaba.dev",
     social: {
       twitter: `jorgearuv`,
     },
@@ -155,6 +155,47 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/blog/rss.xml",
+            match: "^/blog/",
+          },
+        ],
       },
     },
   ],
