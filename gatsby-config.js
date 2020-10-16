@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Tabs & Spaces`,
+    title: `Jorge Ruvalcaba`,
+    blogTitle: `Tabs & Spaces`,
     author: `Jorge Ruvalcaba`,
     description: `Blog de Jorge Ruvalcaba. Se habla de código como de cosas interesantes que encuentra en la red el autor.`,
     siteUrl: "https://jorgeruvalcaba.dev",

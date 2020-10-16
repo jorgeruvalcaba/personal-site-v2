@@ -90,8 +90,7 @@ const ImageWrapper = styled.div`
     }
   }
 `
-
-const Hand = styled.span`
+const HandWrapper = styled.span`
   animation-name: wave-animation;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
@@ -126,6 +125,11 @@ const Hand = styled.span`
   }
 `
 
+const LinkWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
 class IndexPage extends React.Component {
   render() {
     const siteTitle = "Jorge Ruvalcaba"
@@ -145,9 +149,11 @@ class IndexPage extends React.Component {
         </ImageWrapper>
         <h1>
           Hey people{" "}
-          <Hand role="img" aria-label="wave emoji">
-            👋
-          </Hand>
+          <HandWrapper>
+            <span className="hand" role="img" aria-label="wave">
+              👋
+            </span>
+          </HandWrapper>
           <br />
           I'm Jorge and I build things for the web{" "}
         </h1>
@@ -202,9 +208,14 @@ class IndexPage extends React.Component {
             size="3x"
           />
         </ImageWrapper>
-        <Link to="/blog/">
-          <Button marginTop="35px">Check out my blog</Button>
-        </Link>
+        <LinkWrapper>
+          <Link to="/blog/">
+            <Button marginTop="35px">Blog</Button>
+          </Link>
+          <Link to="/uses/">
+            <Button marginTop="35px">Uses</Button>
+          </Link>
+        </LinkWrapper>
       </Layout>
     )
   }

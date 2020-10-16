@@ -11,12 +11,13 @@ class Blog extends React.Component {
   render() {
     const { data, navigate, location } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const blogTitle = data.site.siteMetadata.blogTitle
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
 
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title={blogTitle} />
         <Bio />
         <SearchPosts
           posts={posts}
@@ -39,6 +40,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        blogTitle
       }
     }
     localSearchBlog {
