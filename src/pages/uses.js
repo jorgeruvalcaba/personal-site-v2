@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,11 +7,10 @@ import Button from "../components/button"
 
 class Blog extends React.Component {
   render() {
-    const { data, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const { location } = this.props
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title={"My Uses"}>
         <SEO title="My Uses" />
         <h2>Uses</h2>
         <h3>Editor + Terminal</h3>
@@ -49,13 +48,3 @@ class Blog extends React.Component {
 }
 
 export default Blog
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

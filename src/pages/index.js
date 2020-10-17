@@ -95,7 +95,8 @@ const HandWrapper = styled.span`
     }
     10% {
       transform: rotate(14deg);
-    } /* The following five values can be played with to make the waving more or less extreme */
+    }
+    /* The following five values can be played with to make the waving more or less extreme */
     20% {
       transform: rotate(-8deg);
     }
@@ -110,7 +111,8 @@ const HandWrapper = styled.span`
     }
     60% {
       transform: rotate(0deg);
-    } /* Reset for the last half to pause */
+    }
+    /* Reset for the last half to pause */
     100% {
       transform: rotate(0deg);
     }
