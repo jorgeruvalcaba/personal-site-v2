@@ -8,6 +8,7 @@ import {
   faLinkedin,
   faTwitter,
   faCodepen,
+  faDev,
 } from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
@@ -30,63 +31,54 @@ const ImageWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  .twitter {
+  .icon {
     transition: transform 1s;
 
     &:hover {
-      color: #00acee;
       cursor: pointer;
       transform: scale(1.5);
     }
-  }
 
-  .github {
-    transition: transform 1s;
-
-    &:hover {
-      color: #24292e;
-      cursor: pointer;
-      transform: scale(1.5);
+    &.twitter {
+      &:hover {
+        color: #00acee;
+      }
     }
-  }
 
-  .linkedin {
-    transition: transform 1s;
-
-    &:hover {
-      color: #0e76a8;
-      cursor: pointer;
-      transform: scale(1.5);
+    &.github {
+      &:hover {
+        color: #24292e;
+      }
     }
-  }
 
-  .codepen {
-    transition: transform 1s;
-
-    &:hover {
-      color: black;
-      cursor: pointer;
-      transform: scale(1.5);
+    &.dev {
+      &:hover {
+        color: black;
+      }
     }
-  }
 
-  .file {
-    transition: transform 1s;
-
-    :hover {
-      color: red;
-      cursor: pointer;
-      transform: scale(1.5);
+    &.linkedin {
+      &:hover {
+        color: #0e76a8;
+      }
     }
-  }
 
-  .envelope {
-    transition: transform 1s;
+    &.codepen {
+      &:hover {
+        color: black;
+      }
+    }
 
-    :hover {
-      color: orange;
-      cursor: pointer;
-      transform: scale(1.5);
+    &.file {
+      &:hover {
+        color: red;
+      }
+    }
+
+    &.envelope {
+      &:hover {
+        color: orange;
+      }
     }
   }
 `
@@ -164,19 +156,25 @@ class IndexPage extends React.Component {
         </p>
         <ImageWrapper>
           <FontAwesomeIcon
-            className="twitter"
+            className="icon twitter"
             onClick={() => window.open("https://twitter.com/jorgearuv")}
             icon={faTwitter}
             size="3x"
           />
           <FontAwesomeIcon
-            className="github"
+            className="icon github"
             onClick={() => window.open("https://github.com/jorgeruvalcaba/")}
             icon={faGithub}
             size="3x"
           />
           <FontAwesomeIcon
-            className="linkedin"
+            className="icon dev"
+            onClick={() => window.open("https://dev.to/jorgearuv")}
+            icon={faDev}
+            size="3x"
+          />
+          <FontAwesomeIcon
+            className="icon linkedin"
             onClick={() =>
               window.open("https://www.linkedin.com/in/jorge-ruvalcaba/")
             }
@@ -184,13 +182,13 @@ class IndexPage extends React.Component {
             size="3x"
           />
           <FontAwesomeIcon
-            className="codepen"
+            className="icon codepen"
             onClick={() => window.open("https://codepen.io/jorgeruvalcaba/")}
             icon={faCodepen}
             size="3x"
           />
           <FontAwesomeIcon
-            className="file"
+            className="icon file"
             onClick={() =>
               window.open(
                 "https://docs.google.com/document/d/1MKQlO8Qxp9bOJA69b9E5XA0ZZ3d6ZqQnoO1ybBEW8Fk/edit?usp=sharing"
@@ -200,7 +198,7 @@ class IndexPage extends React.Component {
             size="3x"
           />
           <FontAwesomeIcon
-            className="envelope"
+            className="icon envelope"
             onClick={() =>
               (window.location = "mailto:jorgeruvalcabav@gmail.com")
             }
